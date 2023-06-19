@@ -52,8 +52,8 @@ with st.form("step_1"):
         souper_a = soup_a.text
         souperx_a = souper_a.replace("\n", "")
         #set prompt input from clean content
-        selling_values_a = souperx_a[:1000]
-        st.write(selling_values_a)
+        selling_values = souperx_a[:1000]
+        st.write(selling_values)
 
 
 st.markdown('---')
@@ -97,7 +97,7 @@ with st.form("step_3"):
         souper_b = soup_b.text
         souperx_b = souper_b.replace("\n", "")
         #set prompt input from clean content
-        selling_values_b = souperx_b[:1000]
+        selling_values = souperx_b[:1000]
 
         for i in listx:
             try:
@@ -118,7 +118,7 @@ with st.form("step_3"):
 
                 This is the prospect company website {URL1}
 
-                This is the selling company's product offering: {selling_values_b}
+                This is the selling company's product offering: {selling_values}
 
                 In a JSON format:
 
