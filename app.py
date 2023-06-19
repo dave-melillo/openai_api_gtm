@@ -162,7 +162,8 @@ with st.form("step_3"):
                 #transform to json/dict
                 json_object = json.loads(response, strict=False)
                 #append to main df
-                finaldf = finaldf.append(json_object, ignore_index=True)
+                #finaldf = finaldf.append(json_object, ignore_index=True)
+                finaldf = pd.concat([finaldf, pd.DataFrame(json_object)], ignore_index=True)
                 #print confirm
                 st.write(i + " is done!")
             except Exception as e:
