@@ -40,20 +40,20 @@ with st.form("step_1"):
    # Every form must have a submit button.
    submitted1 = st.form_submit_button("Submit")
    if submitted1:
-        sell_from = 'https://' + sell_from
+        sell_from_a = 'https://' + sell_from
         #selling site
         #set URL to be enriched
-        URL1 = sell_from
+        URL1a = sell_from_a
         #get content 
-        page = requests.get(URL1)
+        page_a = requests.get(URL1a)
         #transform content 
-        soup = BeautifulSoup(page.content, "html.parser")
+        soup_a = BeautifulSoup(page_a.content, "html.parser")
         #clean content
-        souper = soup.text
-        souperx = souper.replace("\n", "")
+        souper_a = soup_a.text
+        souperx_a = souper_a.replace("\n", "")
         #set prompt input from clean content
-        selling_values = souperx[:1000]
-        st.write(selling_values)
+        selling_values_a = souperx_a[:1000]
+        st.write(selling_values_a)
 
 
 st.markdown('---')
@@ -85,19 +85,19 @@ with st.form("step_3"):
 
         finaldf = pd.DataFrame()
 
-        sell_from = 'https://' + sell_from
+        sell_from_b = 'https://' + sell_from
         #selling site
         #set URL to be enriched
-        URLx = sell_from
+        URLxb = sell_from_b
         #get content 
-        page = requests.get(URLx)
+        page_b = requests.get(URLxb)
         #transform content 
-        soup = BeautifulSoup(page.content, "html.parser")
+        soup_b = BeautifulSoup(page_b.content, "html.parser")
         #clean content
-        souper = soup.text
-        souperx = souper.replace("\n", "")
+        souper_b = soup_b.text
+        souperx_b = souper_b.replace("\n", "")
         #set prompt input from clean content
-        selling_values = souperx[:1000]
+        selling_values_b = souperx_b[:1000]
 
         for i in listx:
             try:
@@ -118,7 +118,7 @@ with st.form("step_3"):
 
                 This is the prospect company website {URL1}
 
-                This is the selling company's product offering: {selling_values}
+                This is the selling company's product offering: {selling_values_b}
 
                 In a JSON format:
 
